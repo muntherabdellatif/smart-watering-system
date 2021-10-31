@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smart-watering-system</title>
+    <script src="https://kit.fontawesome.com/0f3736a9ac.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+  --color1: #125c13;
+  --color2: #3e7c17;
+  --color3: #f4a442;
+  --color4: #e8e1d9;
+}
+body {
+  background-color: var(--color2);
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  color: var(--color4);
+  margin: 27px;
+}
+.btn:hover {
+  background-color: var(--color4);
+  color: var(--color2);
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+.plants-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+.plants-container .plant {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 400px;
+  background-color: var(--color3);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.plants-container .plant i:first-child {
+  color: var(--color1);
+  font-size: 200px;
+}
+.plants-container .plant .water-level {
+  overflow: hidden;
+  width: 80%;
+  background-color: var(--color4);
+  height: 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.plants-container .plant .water-level span {
+  display: block;
+  height: 100%;
+  position: relative;
+  background-color: blue;
+}
+.plants-container .plant .pump {
+  display: flex;
+  justify-content: center;
+  width: 63px;
+  cursor: pointer;
+  background-color: var(--color4);
+  border: var(--color3);
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.plants-container .plant .pump:hover {
+  background-color: var(--color2);
+}
+.plants-container .plant .pump:hover i {
+  color: var(--color4);
+}
+.plants-container .plant .pump i {
+  color: var(--color2);
+  font-size: 50px;
+}
+    </style>
+    <!-- <link rel="stylesheet" href="CSS/all.min.css"> -->
+</head>
+<body>
+    <h1>Smart watering System</h1>
+    <div class="plants-container">
+        <div class="plant">
+            <i class="fas fa-seedling"></i>
+            <br>
+            <div class="water-level">
+                <span style="width: 90%" data-progress="90%"></span>
+            </div>
+            <div class="pump active">
+                <i class="fas fa-tint"></i>
+            </div>
+        </div>
+        <div class="plant">
+            <i class="fas fa-seedling"></i>
+            <br>
+            <div class="water-level">
+                <span style="width: 50%" data-progress="50%"></span>
+            </div>
+            <div class="pump ">
+                <a href="/ledon">
+                    <i class="fas fa-tint-slash"></i>
+                </a>
+            </div>
+        </div>
+        <div class="plant">
+            <i class="fas fa-seedling"></i>
+            <br>
+            <div class="water-level">
+                <span style="width: 70%" data-progress="70%"></span>
+            </div>
+            <div class="pump active">
+                <i class="fas fa-tint"></i>
+            </div>
+        </div>
+        <div class="plant">
+            <i class="fas fa-seedling"></i>
+            <br>
+            <div class="water-level">
+                <span style="width: 30%" data-progress="30%"></span>
+            </div>
+            <div class="pump">
+                <i class="fas fa-tint-slash"></i>
+            </div>
+        </div>
+    </div>
+    <!-- <Script src="JS/main.js"></Script> -->
+    <script>
+        let pump =document.querySelectorAll(".pump");
+        pump.forEach (btn =>{
+            btn.addEventListener("click",() => {
+            btn.classList.toggle("active");
+            if ( btn.classList.contains('active')){
+                btn.innerHTML='<i class="fas fa-tint"></i>'
+                }else {
+                    btn.innerHTML='<i class="fas fa-tint-slash"></i>'
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
